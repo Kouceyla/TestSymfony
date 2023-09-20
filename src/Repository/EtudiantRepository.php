@@ -22,7 +22,7 @@ class EtudiantRepository extends ServiceEntityRepository
     }
 
 //    /**
-//     * @return Etudiant[] Returns an array of Etudiant objects
+//     * @return EtudiantFixtures[] Returns an array of EtudiantFixtures objects
 //     */
 //    public function findByExampleField($value): array
 //    {
@@ -36,7 +36,7 @@ class EtudiantRepository extends ServiceEntityRepository
 //        ;
 //    }
 
-//    public function findOneBySomeField($value): ?Etudiant
+//    public function findOneBySomeField($value): ?EtudiantFixtures
 //    {
 //        return $this->createQueryBuilder('e')
 //            ->andWhere('e.exampleField = :val')

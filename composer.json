@@ -10,6 +10,7 @@
         "doctrine/doctrine-bundle": "^2.10",
         "doctrine/doctrine-migrations-bundle": "^3.2",
         "doctrine/orm": "^2.16",
+        "fakerphp/faker": "^1.23",
         "phpdocumentor/reflection-docblock": "^5.3",
         "phpstan/phpdoc-parser": "^1.23",
         "symfony/asset": "6.3.*",
@@ -78,7 +79,17 @@
         ],
         "post-update-cmd": [
             "@auto-scripts"
-        ]
+        ],
+        "start": [  "docker compose up -d",
+            "symfony server:start"
+        ],
+        "stop": [  "docker compose down",
+            "symfony server:stop"
+        ],
+
+        "test": "php vendor/bin/phpunit --testdox tests",
+        "docker-start": "docker compose up -d",
+        "docker-stop": "docker compose down"
     },
     "conflict": {
         "symfony/symfony": "*"
@@ -90,6 +101,7 @@
         }
     },
     "require-dev": {
+        "doctrine/doctrine-fixtures-bundle": "^3.4",
         "phpunit/phpunit": "^9.5",
         "symfony/browser-kit": "6.3.*",
         "symfony/css-selector": "6.3.*",
