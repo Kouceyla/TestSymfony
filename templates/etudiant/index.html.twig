@@ -27,9 +27,9 @@
                 <td>{{ etudiant.nom }}</td>
                 <td>{{ etudiant.prenom }}</td>
                 {% if etudiant.sexe == 1 %}
-                    <td>Femme</td>
-                {% elseif etudiant.sexe== 2 %}
                     <td>Homme</td>
+                {% elseif etudiant.sexe== 2 %}
+                    <td>Femme</td>
                 {% else %}
                     <td>Autre</td>
                 {% endif %}

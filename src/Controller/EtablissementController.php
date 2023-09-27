@@ -17,6 +17,7 @@ class EtablissementController extends AbstractController
     #[Route('/', name: 'app_etablissement_index', methods: ['GET'])]
     public function index(EtablissementRepository $etablissementRepository): Response
     {
+        dump($etablissementRepository->findAll());
         return $this->render('etablissement/index.html.twig', [
             'etablissements' => $etablissementRepository->findAll(),
         ]);

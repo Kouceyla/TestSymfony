@@ -24,6 +24,9 @@ class Etablissement
     #[ORM\OneToMany(mappedBy: 'etablissement', targetEntity: Etudiant::class)]
     private Collection $etablissement;
 
+    #[ORM\ManyToOne(inversedBy: 'etablissements')]
+    private ?Option $Etablissement = null;
+
     public function __construct()
     {
         $this->etablissement = new ArrayCollection();
@@ -84,6 +87,13 @@ class Etablissement
                 $etablissement->setEtablissement(null);
             }
         }
+
+        return $this;
+    }
+
+    public function setEtablissement(?Option $Etablissement): static
+    {
+        $this->Etablissement = $Etablissement;
 
         return $this;
     }
